@@ -1,0 +1,24 @@
+.button {
+    width: 15%;
+    // minimum size that you want a button to be because it is mobile friendly
+    min-width: 48px;
+    min-height: 48px;
+    color: $button-textcolor;
+    border: 2px solid $textbox-bordercolor;
+    //gives the button that rounded look instead of sharp corners
+    border-radius: 10px;
+    //not best practice because users need to see that the focus is on the button/highlighted, but we remove it here because we have a plan for the hover and the focus
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    // changes the brightness of the button when we hover/focus on the button
+    filter: brightness(120%);
+    //psuedo outline
+    box-shadow: 4px 2px 5px #000;
+}

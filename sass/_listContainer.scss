@@ -1,0 +1,55 @@
+.listContainer {
+    min-height: 60vh;
+    padding: 0.75rem;
+
+    .listTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        button {
+            font-size: 1rem;
+            background-color: $clear-button-color;
+            padding: 0 0.1rem;
+            margin-bottom: 0.5rem;
+            @include mq(768px) {
+                padding: 0 0.5rem;
+            }
+        }
+        //the horizontal rule/line that appears in the container list but because of the class padding, doesn't fit the entire section
+        hr {
+            width: 100%;
+        }
+    }
+    
+    // actual list of items on the to do list container list
+    .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+        // the checkbox styling for the items in the to do list
+        input[type="checkbox"] {
+            text-align: center;
+            width: 2.5rem;
+            min-width: 48px;
+            height: 2.5rem;
+            min-height: 48px;
+            cursor: pointer;
+            margin-right: 1.5rem;
+        }
+        // gives an extra visual when we tab through the application so it highlights both the checkbox and the actual label for that item
+        input[type="checkbox"]:focus + label {
+            text-decoration: underline;
+        }
+
+        label {
+            font-size: 1.1rem;
+        }
+    }
+
+    .confirmation {
+        position: absolute;
+        left: -10000px;
+    } 
+}

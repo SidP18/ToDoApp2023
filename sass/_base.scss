@@ -1,0 +1,51 @@
+// defining some variables that has all the colors for the project that can be accessed easily
+$default-font-color: #000;
+$background-color: #4a90e2;
+$container-bgcolor: #f2f2f2;
+$container-bordercolor: #000;
+$textbox-bordercolor: lightgrey;
+$button-textcolor: #fff;
+$add-button-color: #4caf50;
+$clear-button-color: #9f6060;
+
+
+
+// mixin for media query
+@mixin mq($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+// css starts from here and * means select for all elements
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: $default-font-color;
+    width: 100%;
+    min-height: 100%;
+    @include mq(768px) {
+        font-size: 22px;
+    }
+}
+
+body {
+    padding: 20px;
+    background-color: $background-color;
+}
+
+section {
+    background-color: $container-bgcolor;
+    width: 90%;
+    max-width: 700px;
+    // centers the two sections of the application
+    margin: auto;
+    border: 1px solid $container-bordercolor;
+    border-radius: 10px;
+}
